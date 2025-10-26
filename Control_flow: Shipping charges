@@ -1,0 +1,39 @@
+#calculation of charges based on package weight. Mostly self-explanatory
+weight = 8.4
+cost = 0
+#ground shipping 
+flat_charge = 20
+
+if weight <= 2: 
+  cost = flat_charge + (weight * 1.50)
+  print(cost)
+elif weight > 2 and weight <= 6: 
+  cost = flat_charge + (weight * 3.00)
+  print(cost)
+elif weight > 6 and weight <=10: 
+  cost = flat_charge + (weight * 4.00) 
+  print(cost)
+else:
+  cost = flat_charge + (weight * 4.75)
+  print(cost)
+
+  #ground shipping premium 
+  ground_shipping_p = 125.00 
+  print("Ground Shipping Premium $", ground_shipping_p)
+
+  #drone shipping 
+weight = 1.5
+drone_cost = 0 
+if weight <= 2: 
+  drone_cost = (weight * 4.50)
+  print(drone_cost)
+elif weight > 2 and weight <= 6: 
+  drone_cost = (weight * 9.00)
+  print(drone_cost)
+elif weight > 6 and weight <=10: 
+  cost = (weight * 12.00)
+  print(drone_cost)
+else:
+  cost = (weight * 14.25)
+  print(drone_cost)
+  
