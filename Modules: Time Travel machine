@@ -1,0 +1,31 @@
+import datetime as dt
+from decimal import Decimal
+from random import randint, choice
+import custom_module
+
+#current date and yr
+current_year = dt.datetime.now().year
+currentday = dt.date.today()
+destinations = ["UK", "US", "GER", "JPN", "SGP", "CHN"]
+random_place = choice(destinations)
+
+#printing for viewer's eyes
+print("You are travelling to", random_place)
+print("Today's date is", currentday)
+print("The current year is", current_year)
+target_year = randint(0, 2025)
+print("You want to travel to the Year", target_year)
+
+#cost calculations
+base_cost = Decimal('1000.00')
+difference = abs(current_year - target_year)
+multiplier = Decimal("1") + (Decimal("0.05") * Decimal(difference))
+final_cost = base_cost * multiplier
+final_cost = final_cost.quantize(Decimal("0.01"))
+
+#confirmation printing 
+print(f"Year difference: {difference:.2f}")
+print(f"Final cost: {final_cost:.2f}")
+confirmation = custom_module.generate_time_travel_message(target_year, random_place, final_cost)
+print(confirmation)
+
