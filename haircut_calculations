@@ -1,0 +1,29 @@
+hairstyles = ["bouffant", "pixie", "dreadlocks", "crew", "bowl", "bob", "mohawk", "flattop"]
+
+prices = [30, 25, 40, 20, 20, 35, 50, 35]
+last_week = [2, 3, 5, 8, 4, 4, 6, 2]
+total_price = 0
+
+for price in prices: #calculate total price of all haircuts
+  total_price += price
+print(total_price)
+num = len(prices)
+average_price = total_price/num
+print("Average Haircut Price:$", average_price) #calculate average haircut prices
+
+new_prices = [ ]
+for price in prices: 
+  new_prices.append(price - 5) #$5 discount on prices
+print(new_prices)
+
+total_revenue = 0  # total revenue calculations
+for i in range(len(hairstyles)): 
+  print(i, hairstyles[i])
+  total_revenue += prices[i] * last_week[i]
+print("Total Revenue:$", total_revenue)
+average_daily_revenue = total_revenue/7 #average revenue/day in the week
+print(average_daily_revenue)
+
+cuts_under_30 = [hairstyles[i] for i in range(len(new_prices)) if new_prices[i]
+ < 30] #haircuts that cost less than 30 based on new prices
+print(cuts_under_30)
