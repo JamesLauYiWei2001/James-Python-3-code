@@ -1,0 +1,29 @@
+import random
+import time
+
+Responses = [ 
+"I'm sorry to hear that. Have you tried turning it off and on again?",
+"That sounds hard. Please contemplate turning it off and on again?",
+"Emotions can be frustrating. Maybe try turning it off and on again?",
+"Interesting... Do consider turning it off, waiting 10 minutes, then turning it on again?",
+"That must be upsetting. Sometimes turning it off and on again helps... :3",
+]
+
+def ai_chatbot():
+    print("Hello, thank you for reaching out. I'm here to help you with your problems. :D")
+    while True:
+        try: 
+            user_input = input("You: ")
+            if user_input.lower() in ['exit', 'quit']:
+                print("Goodbye hehe! :3 Remember to always turn it on and off again.")
+                break
+            time.sleep(0.5)
+            print("Therapist: " + random.choice(Responses))
+        except (KeyboardInterrupt, EOFError):
+            print("\nGoodbye love! Don't forget to turn it on and off again. <3")
+            break
+
+
+if __name__ == "__main__":
+    ai_chatbot()
+    
